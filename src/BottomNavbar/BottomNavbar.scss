@@ -1,0 +1,168 @@
+.container {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 0 8px 8px 8px;
+    right: 0;
+    box-sizing: border-box
+}
+
+.bottom_content {
+    background-color: #fff;
+    box-sizing: border-box;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    height: 70px;
+    padding: 0 8px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.25);
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    background: #fff;
+    width: 20%;
+    font-size: 12px;
+}
+
+.active {
+    color: #005AB8;
+
+    svg {
+        path {
+            fill: #005AB8;
+        }
+    }
+
+    .sellIcon {
+        animation: pulse 1s 1;
+    }
+
+    .financeIcon {
+        animation: spin 1s 1;
+    }
+
+    .shopIcon {
+        animation: pulse 1s 1;
+    }
+
+    .chatIcon {
+        animation: float 2s ease-in-out 1;
+    }
+
+    .moreIcon {
+        animation: pulse 1s 1;
+    }
+}
+
+.active:after {
+    background: linear-gradient(to right, transparent 15%, #005AB8 15%, #005AB8 50%, #005AB8 50%, #005AB8 85%, transparent 85%);
+    position: absolute;
+    content: '';
+    height: 4px;
+    right: 0;
+    left: 0;
+    top: 0;
+}
+
+
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(180deg);
+    }
+}
+
+
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    25% {
+        transform: translateY(-2px) rotate(10deg);
+    }
+
+    50% {
+        transform: translateY(-4px) rotate(-10deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+.drawer {
+    background-color: #fff;
+    box-sizing: border-box;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.25);
+    margin-bottom: 8px;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    &-option {
+        height: 70px;
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        align-items: center;
+        padding: 0 16px;
+        width: 100%;
+        box-sizing: border-box;
+
+        &-circle {
+            background-color: #005AB8;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 100%;
+
+            svg {
+                width: 24px;
+                max-height: 24px;
+            }
+        }
+
+        &-text {
+            color: #2A343D;
+        }
+
+    }
+}
