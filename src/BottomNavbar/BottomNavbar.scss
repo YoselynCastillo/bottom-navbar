@@ -1,3 +1,5 @@
+@import "../styles/variables";
+
 .container {
     width: 100%;
     position: fixed;
@@ -9,9 +11,9 @@
 }
 
 .bottom_content {
-    background-color: #fff;
+    background-color: $white;
     box-sizing: border-box;
-    color: #000;
+    color: $black;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -29,17 +31,25 @@
     flex-direction: column;
     height: 100%;
     position: relative;
-    background: #fff;
+    background: $white;
     width: 20%;
     font-size: 12px;
 }
 
+.drawer-option-circle {
+    svg {
+        path {
+            fill: $white;
+        }
+    }
+}
+
 .active {
-    color: #005AB8;
+    color: $blue;
 
     svg {
         path {
-            fill: #005AB8;
+            fill: $blue;
         }
     }
 
@@ -65,7 +75,7 @@
 }
 
 .active:after {
-    background: linear-gradient(to right, transparent 15%, #005AB8 15%, #005AB8 50%, #005AB8 50%, #005AB8 85%, transparent 85%);
+    background: linear-gradient(to right, transparent 15%, $blue 15%, $blue 85%, transparent 85%);
     position: absolute;
     content: '';
     height: 4px;
@@ -121,19 +131,61 @@
     }
 }
 
+@-webkit-keyframes slide-in-bottom {
+    0% {
+        -webkit-transform: translateY(1000px);
+        transform: translateY(1000px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in-bottom {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-out-bottom {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+}
+
+
+
+
 .drawer {
-    background-color: #fff;
+    background-color: $white;
     box-sizing: border-box;
-    color: #000;
+    color: $black;
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
     border-radius: 5px;
-    box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 0px 9px 0px $shadow-color;
     margin-bottom: 8px;
     overflow: hidden;
     box-sizing: border-box;
+    display: none;
 
     &-option {
         height: 70px;
@@ -144,9 +196,11 @@
         padding: 0 16px;
         width: 100%;
         box-sizing: border-box;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
 
         &-circle {
-            background-color: #005AB8;
+            background-color: $blue;
             width: 40px;
             height: 40px;
             display: flex;
@@ -161,8 +215,21 @@
         }
 
         &-text {
-            color: #2A343D;
+            color: $text-color;
         }
 
     }
 }
+
+.drawer.expanded {
+    display: block;
+    -webkit-animation: slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+// .drawer.collapsed {
+//     display: block;
+//     -webkit-animation: slide-out-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both reverse;
+//     animation: slide-out-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both reverse;
+// }
+
