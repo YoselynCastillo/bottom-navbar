@@ -242,22 +242,6 @@
     animation: slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     max-height: 100%; 
   }
-//   .drawer.collapsed {
-//     display: block;
-//     animation: fade-out 0.5s ease-in-out both;
-//     opacity: 0;
-//     max-height: 0;
-//   }
-  
-//   @keyframes fade-out {
-//     0% {
-//       opacity: 1;
-//     }
-  
-//     100% {
-//       opacity: 0;
-//     }
-//   }
 
 .drawer.collapsed {
     display: block;
