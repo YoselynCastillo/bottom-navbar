@@ -13,12 +13,12 @@ const BottomNavbar = () => {
 
     const selectOption = (option: string) => {
         if (option === active) {
-            setDrawerOpen(!drawerOpen);
+            setDrawerOpen(false);
             setActive("");
         } else {
             setActive(option);
             setCurrenData(data[option].options);
-            setDrawerOpen(!drawerOpen);
+            setDrawerOpen(true);
         }
     }
     
