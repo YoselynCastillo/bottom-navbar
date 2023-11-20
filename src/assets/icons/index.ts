@@ -2,9 +2,9 @@ import SellIcon from "./sellIcon";
 import BrowseIcon from "./BrowseIcon";
 import ViewAllIcon from "./ViewAllIcon";
 import AttachMoneyIcon from "./AttachMoneyIcon";
-import financeIcon from "./financeIcon";
-import shopIcon from "./shopIcon";
-import chatIcon from "./chatIcon";
-import moreIcon from "./moreIcon";
+import FinanceIcon from "./financeIcon";
+import ShopIcon from "./shopIcon";
+import ChatIcon from "./chatIcon";
+import MoreIcon from "./moreIcon";
 
-export { moreIcon, SellIcon, BrowseIcon, ViewAllIcon, AttachMoneyIcon, financeIcon, shopIcon, chatIcon };
+export { MoreIcon, SellIcon, BrowseIcon, ViewAllIcon, AttachMoneyIcon, FinanceIcon, ShopIcon, ChatIcon };
