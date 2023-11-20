@@ -10,6 +10,7 @@ const BottomNavbar = () => {
     const [drawerOpen, setDrawerOpen] = useState(false);
     const drawerRef = useRef<HTMLDivElement>(null);
     const bottomContentRef = useRef<HTMLDivElement>(null); 
+    console.log("drawerOpen", drawerOpen)
 
     const selectOption = (option: string) => {
         if (option === active) {
@@ -53,6 +54,7 @@ const BottomNavbar = () => {
             document.removeEventListener("mousedown", handleClickOutside);
         };
     }, []);
+    
 
     return (
         <div className="container">
