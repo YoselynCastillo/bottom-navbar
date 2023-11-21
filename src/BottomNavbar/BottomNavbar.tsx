@@ -43,7 +43,7 @@ const BottomNavbar = () => {
         setActive("");
     };
 
-    const handleClickOutside = (event: any) => {
+    const handleClickOutside = (event) => {
         if (drawerRef.current && !drawerRef.current.contains(event.target) &&
             bottomContentRef.current && !bottomContentRef.current.contains(event.target)) {
             setDrawerOpen(false);
