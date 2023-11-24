@@ -1,5 +1,269 @@
-@import "../styles/variables";
+// @import "../styles/variables";
+// .container {
+//     width: 100%;
+//     position: fixed;
+//     bottom: 0;
+//     left: 0;
+//     padding: 0 8px 8px 8px;
+//     right: 0;
+//     box-sizing: border-box;
+// }
 
+// .bottom_content {
+//     background-color: $white;
+//     box-sizing: border-box;
+//     color: $black;
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-between;
+//     flex-direction: row;
+//     height: 70px;
+//     overflow: hidden;
+//     border-radius: 5px;
+//     box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.25);
+// }
+
+// .nav-item {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     flex-direction: column;
+//     height: 100%;
+//     position: relative;
+//     background: $white;
+//     width: 20%;
+//     font-size: 12px;
+//     gap: 6px;
+//     position: relative;
+//     z-index: 1;
+  
+//     &:first-child {
+//         padding-left: 8px;
+//     }
+
+//     &:last-child {
+//         padding-right: 8px;
+//     }
+
+//     .chatIcon {
+//         width: 22px;
+//     }
+// }
+
+// .drawer-option-circle {
+//     svg {
+//         path {
+//             fill: $white;
+//         }
+//     }
+// }
+
+// .active {
+//     /* Aplica negrita al texto y al icono */
+//     font-weight: bold; 
+
+//     /* Aplica la transición a todos los iconos */
+//     // .sellIcon, .financeIcon, .shopIcon, .chatIcon, .moreIcon {
+//     //     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+//     // }
+// }
+// .active:after {
+//     background: rgba(230, 225, 239, 0.761); 
+//     position: absolute;
+//     content: '';
+//     height: 100%; 
+//     right: 0;
+//     left: 0;
+//     top: 0;
+//     z-index: -1;
+//     animation: expand-in 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+//     transform-origin: center; // Asegura que la expansión comience desde el centro
+// }
+
+// @keyframes expand-in {
+//     0% {
+//         transform: scaleX(0); // Comienza sin expansión horizontal
+//         opacity: 0;
+//     }
+//     100% {
+//         transform: scaleX(1); // Se expande horizontalmente a su tamaño completo
+//         opacity: 1;
+//     }
+// }
+
+// @keyframes expand-out {
+//     0% {
+//         transform: scaleX(1); // Comienza con su tamaño completo horizontal
+//         opacity: 1;
+//     }
+//     100% {
+//         transform: scaleX(0); // Se contrae completamente
+//         opacity: 0;
+//     }
+// }
+
+// @keyframes pulse {
+//     0% {
+//         transform: scale(1.2);
+//     }
+
+//     50% {
+//         transform: scale(1.4);
+//     }
+
+//     100% {
+//         transform: scale(1.2);
+//     }
+// }
+
+
+// @keyframes spin {
+//     0% {
+//         transform: scale(0.8) rotate(0deg);
+//     }
+//     150% {
+//         transform: scale(1.4);
+//     }
+//     100% {
+//         transform: scale(1.2) rotate(180deg);
+//     }
+// }
+
+
+
+// @keyframes float {
+//     0% {
+//         transform: scale(0.8) translateY(0);
+//     }
+
+//     25% {
+//         transform: scale(1.2) translateY(-2px) rotate(10deg);
+//     }
+
+//     50% {
+//         transform: scale(1.2) translateY(-4px) rotate(-10deg);
+//     }
+
+//     100% {
+//         transform: scale(0.8) translateY(0) rotate(0deg);
+//     }
+// }
+
+// @-webkit-keyframes slide-in-bottom {
+//     0% {
+//         -webkit-transform: translateY($translate-size);
+//         transform: translateY($translate-size);
+//         opacity: 0;
+//     }
+
+//     100% {
+//         -webkit-transform: translateY(0);
+//         transform: translateY(0);
+//         opacity: 1;
+//     }
+// }
+
+// @keyframes slide-in-bottom {
+//     0% {
+//         transform: translateY($translate-size);
+//         opacity: 0;
+//     }
+
+//     100% {
+//         transform: translateY(0);
+//         opacity: 1;
+//     }
+// }
+
+// // Resto de estilos...
+
+// .drawer {
+//     background-color: $white;
+//     box-sizing: border-box;
+//     color: $black;
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-between;
+//     flex-direction: column;
+//     border-radius: 5px;
+//     box-shadow: 0px 0px 9px 0px $shadow-color;
+//     margin-bottom: 8px;
+//     overflow: hidden;
+//     box-sizing: border-box;
+//     display: none;
+//     transition: all 0.3s ease-in-out;
+//     max-height: 0;
+
+//     &-option {
+//         height: 70px;
+//         display: flex;
+//         flex-direction: row;
+//         gap: 16px;
+//         align-items: center;
+//         padding: 0 16px;
+//         width: 100%;
+//         box-sizing: border-box;
+//         overflow: hidden;
+//         transition: max-height 0.3s ease-out;
+
+//         &-circle {
+//             background-color: $blue;
+//             width: 40px;
+//             height: 40px;
+//             display: flex;
+//             align-items: center;
+//             justify-content: center;
+//             border-radius: 100%;
+
+//             svg {
+//                 width: 24px;
+//                 max-height: 24px;
+//             }
+//         }
+
+//         &-text {
+//             color: $text-color;
+//         }
+//     }
+// }
+
+// .drawer.expanded {
+//     display: block;
+//     animation: zoom-in 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+//     max-height: 100%;
+// }
+
+// .drawer.collapsed {
+//     display: block;
+//     animation: zoom-out 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+// }
+
+// @keyframes zoom-in {
+//     0% {
+//         transform: scale(0.8);
+//         opacity: 0;
+//     }
+
+//     100% {
+//         transform: scale(1);
+//         opacity: 1;
+//     }
+// }
+
+// @keyframes zoom-out {
+//     0% {
+//         transform: scale(1);
+//         opacity: 1;
+//     }
+
+//     100% {
+//         transform: scale(0.8);
+//         opacity: 0;
+//     }
+// }
+
+
+@import "../styles/variables";
 .container {
     width: 100%;
     position: fixed;
@@ -7,7 +271,7 @@
     left: 0;
     padding: 0 8px 8px 8px;
     right: 0;
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 
 .bottom_content {
@@ -22,7 +286,6 @@
     overflow: hidden;
     border-radius: 5px;
     box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.25);
-
 }
 
 .nav-item {
@@ -102,26 +365,28 @@
 
 @keyframes pulse {
     0% {
-        transform: scale(1);
+        transform: scale(0.8);
     }
 
     50% {
-        transform: scale(1.2);
+        transform: scale(1.4);
     }
 
     100% {
-        transform: scale(1);
+        transform: scale(1.2);
     }
 }
 
 
 @keyframes spin {
     0% {
-        transform: rotate(0deg);
+        transform: scale(0.8) rotate(0deg);
     }
-
+    150% {
+        transform: scale(1.4);
+    }
     100% {
-        transform: rotate(180deg);
+        transform: scale(1.2) rotate(180deg);
     }
 }
 
@@ -129,19 +394,19 @@
 
 @keyframes float {
     0% {
-        transform: translateY(0);
+        transform: scale(0.8) translateY(0);
     }
 
     25% {
-        transform: translateY(-2px) rotate(10deg);
+        transform: scale(1.4) translateY(-2px) rotate(10deg);
     }
 
     50% {
-        transform: translateY(-4px) rotate(-10deg);
+        transform: scale(1.4) translateY(-4px) rotate(-10deg);
     }
 
     100% {
-        transform: translateY(0) rotate(0deg);
+        transform: scale(0.8) translateY(0) rotate(0deg);
     }
 }
 
@@ -170,6 +435,8 @@
         opacity: 1;
     }
 }
+
+// Resto de estilos...
 
 .drawer {
     background-color: $white;
@@ -218,29 +485,40 @@
         &-text {
             color: $text-color;
         }
-
     }
 }
 
 .drawer.expanded {
     display: block;
-    animation: slide-in-bottom 0.25s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: zoom-in 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
     max-height: 100%;
 }
 
 .drawer.collapsed {
     display: block;
-    animation: slide-out-top 0.25s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: zoom-out 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
 }
 
-@keyframes slide-out-top {
+@keyframes zoom-in {
     0% {
-        transform: translateY(0);
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes zoom-out {
+    0% {
+        transform: scale(1);
         opacity: 1;
     }
 
     100% {
-        transform: translateY($translate-size);
+        transform: scale(0.8);
         opacity: 0;
     }
 }
