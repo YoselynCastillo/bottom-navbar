@@ -88,7 +88,7 @@ const BottomNavbarV3 = ({ drawerOpen, setDrawerOpen }) => {
   }, []);
 
   return (
-    <div className="container">
+    <div className="containerV3">
       <div
         ref={drawerRef}
         className={`drawer ${drawerOpen ? "expanded" : "collapsed"}`}

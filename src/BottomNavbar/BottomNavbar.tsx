@@ -60,7 +60,7 @@ const BottomNavbar = () => {
 
 
     return (
-        <div className="container">
+        <div className="containerV1">
             <div ref={drawerRef} className={`drawer ${drawerOpen ? 'expanded' : 'collapsed'}`}>
                 {
                     currenData.map((option) => (
