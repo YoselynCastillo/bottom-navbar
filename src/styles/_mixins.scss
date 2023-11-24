@@ -1,0 +1,13 @@
+@mixin customAnimation($name, $valor-inicial, $valor-final, $property) {
+    @keyframes #{$name} {
+        from {
+            #{#{$property}}: $valor-inicial;
+        }
+
+        to {
+            #{#{$property}}: $valor-final;
+        }
+    }
+
+    animation: $name 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
