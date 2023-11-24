@@ -1,14 +1,14 @@
 @import "../../styles/variables";
 
-.containerV3 {
+.container {
   width: 100%;
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   box-sizing: border-box;
+}
 
-  
 .navbar {
   position: relative;
   height: 70px;
@@ -32,6 +32,7 @@
   align-content: center;
   align-items: center;
   justify-items: center;
+  font-size: 12px;
 
   .chatIcon {
     width: 22px;
@@ -44,14 +45,34 @@
 
 .indicator {
   position: absolute;
-  height: 3px;
+  height: 4px;
   background-color: $blue;
   top: 0;
   left: 0;
   width: 0;
-  transition: transform 0.2s ease;
-  transform-origin: center;
-  transform: translateX(-50%) scaleX(0);
+  transition: transform 0.5s ease, left 0.5s ease, opacity 0.5s ease;
+}
+
+@-webkit-keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.drawer.collapsed .indicator {
+  animation: fade-out 0.2s ease-out both;
 }
 
 .drawer-option-circle {
@@ -100,9 +121,9 @@
   overflow: hidden;
   box-sizing: border-box;
   margin: 10px;
-  transition: opacity 0.5s ease-in-out, visibility 0.4s ease-in-out;
-  opacity: 0;
-  visibility: hidden;
+  display: none;
+  transition: all 0.3s ease-in-out;
+  max-height: 0;
 
   &-option {
     height: 70px;
@@ -138,55 +159,24 @@
 }
 
 .drawer.expanded {
-  opacity: 1;
-  visibility: visible;
-  -webkit-animation: fade-out 0.5s ease-out reverse;
-  animation: fade-out 0.5s ease-out reverse;
+  display: block;
+  animation: zoom-in 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  max-height: 100%;
 }
 
 .drawer.collapsed {
-  -webkit-animation: fade-out-bck 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  animation: fade-out-bck 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  display: block;
+  animation: zoom-out 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
 }
 
-@-webkit-keyframes fade-out {
+@keyframes slide-out-top {
   0% {
+    transform: translateY(0);
     opacity: 1;
   }
-  100% {
-    opacity: 0;
-  }
-}
-@keyframes fade-out {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
 
-@-webkit-keyframes fade-out-bck {
-  0% {
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    opacity: 1;
-  }
   100% {
-    -webkit-transform: translateZ(-80px);
-    transform: translateZ(-80px);
-    opacity: 0;
-  }
-}
-@keyframes fade-out-bck {
-  0% {
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: translateZ(-80px);
-    transform: translateZ(-80px);
+    transform: translateY($translate-size);
     opacity: 0;
   }
 }
@@ -233,5 +223,52 @@
   }
 }
 
+@-webkit-keyframes slide-in-bottom {
+  0% {
+    -webkit-transform: translateY($translate-size);
+    transform: translateY($translate-size);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
+@keyframes slide-in-bottom {
+  0% {
+    transform: translateY($translate-size);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes zoom-in {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes zoom-out {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+}
