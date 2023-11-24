@@ -43,7 +43,7 @@ const BottomNavbar = () => {
         setActive("");
     };
 
-    const handleClickOutside = (event: any) => {
+    const handleClickOutside = (event) => {
         if (drawerRef.current && !drawerRef.current.contains(event.target) &&
             bottomContentRef.current && !bottomContentRef.current.contains(event.target)) {
             setDrawerOpen(false);
@@ -60,7 +60,7 @@ const BottomNavbar = () => {
 
 
     return (
-        <div className="container">
+        <div className="containerV1">
             <div ref={drawerRef} className={`drawer ${drawerOpen ? 'expanded' : 'collapsed'}`}>
                 {
                     currenData.map((option) => (
@@ -77,7 +77,7 @@ const BottomNavbar = () => {
             <div ref={bottomContentRef} className="bottom_content">
                 <div className={`nav-item  ${active === "sell" && 'active'}`} onClick={() => selectOption("sell")}>
                     <SellIcon />
-                    <span>hola</span>
+                    <span>Shop</span>
                 </div>
                 <div className={`nav-item  ${active === "finance" ? 'active' : ''}`} onClick={() => selectOption("finance")}>
                     <FinanceIcon />
@@ -95,7 +95,6 @@ const BottomNavbar = () => {
                     <MoreIcon />
                     <span>More</span>
                 </div>
-
             </div>
         </div>
     )
