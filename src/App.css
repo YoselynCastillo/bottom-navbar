@@ -19,6 +19,7 @@
     left: 0;
     padding: 16px;
     box-sizing: border-box;
+
 }
 
 button{
@@ -28,4 +29,10 @@ button{
     border: none;
     border-radius: 12px;
     height: 40px;
+    text-transform: uppercase;
+}
+
+.activeVersion{
+    background-color: #ffd520;
+    color: #000;
 }
