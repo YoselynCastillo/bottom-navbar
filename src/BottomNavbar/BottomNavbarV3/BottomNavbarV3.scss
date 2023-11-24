@@ -33,6 +33,7 @@
   align-content: center;
   align-items: center;
   justify-items: center;
+  font-size: 12px;
 
   .chatIcon {
     width: 22px;
@@ -45,14 +46,34 @@
 
 .indicator {
   position: absolute;
-  height: 3px;
+  height: 4px;
   background-color: $blue;
   top: 0;
   left: 0;
   width: 0;
-  transition: transform 0.2s ease;
-  transform-origin: center;
-  transform: translateX(-50%) scaleX(0);
+  transition: transform 0.5s ease, left 0.5s ease, opacity 0.5s ease;
+}
+
+@-webkit-keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.drawer.collapsed .indicator {
+  animation: fade-out 0.2s ease-out both;
 }
 
 .drawer-option-circle {

@@ -9,7 +9,7 @@ const BottomNavbarV3 = ({ drawerOpen, setDrawerOpen }) => {
   const [currenData, setCurrenData] = useState(
     data[active] ? data[active].options : []
   );
-  // const [drawerOpen, setDrawerOpen] = useState(false);
+
   const drawerRef = useRef<HTMLDivElement>(null);
   const bottomContentRef = useRef<HTMLDivElement>(null);
 
