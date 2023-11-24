@@ -77,7 +77,7 @@ const BottomNavbar = () => {
             <div ref={bottomContentRef} className="bottom_content">
                 <div className={`nav-item  ${active === "sell" && 'active'}`} onClick={() => selectOption("sell")}>
                     <SellIcon />
-                    <span>hola</span>
+                    <span>Shop</span>
                 </div>
                 <div className={`nav-item  ${active === "finance" ? 'active' : ''}`} onClick={() => selectOption("finance")}>
                     <FinanceIcon />
@@ -95,7 +95,6 @@ const BottomNavbar = () => {
                     <MoreIcon />
                     <span>More</span>
                 </div>
-
             </div>
         </div>
     )

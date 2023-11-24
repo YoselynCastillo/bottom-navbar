@@ -1,65 +1,127 @@
+import React, { useState, useRef, useEffect } from "react";
 import "./BottomNavbarItem.scss";
-import React, { useEffect, useRef } from "react";
+import { data, Array } from "../data";
+
 const BottomNavbarItem = () => {
-  const navRef = useRef(null);
+  const [selectedItem, setSelectedItem] = useState(null);
+  const [indicatorStyle, setIndicatorStyle] = useState({});
+  const [active, setActive] = useState("");
+  const [currenData, setCurrenData] = useState(
+    data[active] ? data[active].options : []
+  );
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const drawerRef = useRef<HTMLDivElement>(null);
+  const bottomContentRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const nav = navRef.current;
-    const items = nav.querySelectorAll(".nav-item");
-    const indicator = nav.querySelector(".nav-indicator");
-
-    function handleIndicator(el) {
-      items.forEach((item) => {
-        item.classList.remove("is-active");
-        item.style.color = null; // Remueve el estilo inline
-      });
-
-      indicator.style.width = `${el.offsetWidth}px`;
-      indicator.style.left = `${el.offsetLeft}px`;
-      indicator.style.backgroundColor = el.getAttribute("active-color");
-
-      el.classList.add("is-active");
-      el.style.color = el.getAttribute("active-color");
+  const handleItemClick = (itemIndex, event, option) => {
+    if (option === active) {
+      setDrawerOpen(false);
+      setActive("");
+    } else {
+      setActive(option);
+      setCurrenData(data[option].options);
+      setDrawerOpen(true);
     }
 
-    items.forEach((item) => {
-      item.addEventListener("click", (e) => {
-        e.preventDefault(); // Previene el comportamiento por defecto de los enlaces
-        handleIndicator(e.target);
-      });
-      if (item.classList.contains("is-active")) {
-        handleIndicator(item);
-      }
-    });
+    const width = event.target.offsetWidth;
+    const left = event.target.offsetLeft;
 
-    // Limpiar los event listeners al desmontar el componente
-    return () => {
-      items.forEach((item) => {
-        item.removeEventListener("click", handleIndicator);
+    if (selectedItem === itemIndex) {
+      setIndicatorStyle({
+        ...indicatorStyle,
+        transform: "translateX(-50%) scaleX(0)",
       });
+      setTimeout(() => {
+        if (selectedItem === itemIndex) {
+          setSelectedItem(null);
+          setIndicatorStyle({});
+        }
+      }, 200);
+    } else {
+      setSelectedItem(itemIndex);
+      setIndicatorStyle({
+        width: `${width}px`,
+        left: `${left + width / 2}px`,
+        transform: "translateX(-50%) scaleX(1)",
+      });
+    }
+  };
+
+  const handleDrawerOptionClick = () => {
+    setDrawerOpen(false);
+    setActive("");
+    setSelectedItem(null);
+    setIndicatorStyle({});
+  };
+
+  const boldText = (text: string) => {
+    const primeraPalabra = text.split(" ")[0]; // Obtener la primera palabra del texto
+    const restoDelTexto = text.slice(primeraPalabra.length); // Obtener el resto del texto
+
+    return (
+      <>
+        <b>{primeraPalabra}</b>
+        {restoDelTexto}
+      </>
+    );
+  };
+
+  const handleClickOutside = (event) => {
+    if (
+      drawerRef.current &&
+      !drawerRef.current.contains(event.target) &&
+      bottomContentRef.current &&
+      !bottomContentRef.current.contains(event.target)
+    ) {
+      setDrawerOpen(false);
+      setActive("");
+      setSelectedItem(null);
+      setIndicatorStyle({});
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
   return (
     <>
-      <nav className="nav" ref={navRef}>
-        <a href="#" className="nav-item is-active" active-color="blue">
-          Home
-        </a>
-        <a href="#" className="nav-item" active-color="blue">
-          About
-        </a>
-        <a href="#" className="nav-item" active-color="blue">
-          Testimonials
-        </a>
-        <a href="#" className="nav-item" active-color="blue">
-          Blog
-        </a>
-        <a href="#" className="nav-item" active-color="blue">
-          Contact
-        </a>
-        <span className="nav-indicator"></span>
-      </nav>
+      <div
+        ref={drawerRef}
+        className={`drawer ${drawerOpen ? "expanded" : "collapsed"}`}
+      >
+        {currenData.map((option) => (
+          <div
+            key={option.text}
+            className="drawer-option"
+            onClick={() => handleDrawerOptionClick()}
+          >
+            <div className="drawer-option-circle">
+              <option.icon />
+            </div>
+            <span className="drawer-option-text">{boldText(option.text)}</span>
+          </div>
+        ))}
+      </div>
+      <div className="navbar"  ref={bottomContentRef}>
+        {Array.map((item, index) => {
+          return (
+            <div
+              key={index}
+              onClick={(e) => handleItemClick(index, e, item?.text)}
+              className={`nav-item  ${active === item.text ? "active" : ""}`}
+            >
+              <item.icon />
+              {item.text}
+            </div>
+          );
+        })}
+
+        <div className="indicator" style={indicatorStyle}></div>
+      </div>
     </>
   );
 };
