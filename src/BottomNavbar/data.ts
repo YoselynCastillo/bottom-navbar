@@ -1,4 +1,9 @@
-import { BrowseIcon, ViewAllIcon, SellIcon, AttachMoneyIcon} from "../assets/icons";
+import { BrowseIcon, ViewAllIcon, SellIcon, AttachMoneyIcon,
+    FinanceIcon,
+    ShopIcon,
+    ChatIcon,
+    MoreIcon,
+} from "../assets/icons";
 
 type DataType = {
     [key: string]: {
@@ -132,3 +137,11 @@ export const data: DataType = {
         ]
     },
 }
+
+export const Array = [
+    { text: "sell", icon: SellIcon },
+    { text: "finance", icon: FinanceIcon },
+    { text: "shop", icon: ShopIcon },
+    { text: "chat", icon: ChatIcon },
+    { text: "more", icon: MoreIcon },
+  ];
