@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import BottomNavbar from "./BottomNavbar/BottomNavbar";
+import BottomNavbar from "./BottomNavbarV4/BottomNavbar";
 import "./App.css"; // Asegúrate de importar el archivo CSS aquí
 import image from "./img/carmax.jpg";
 
