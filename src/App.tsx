@@ -1,11 +1,19 @@
 import BottomNavbarV2 from "./BottomNavbarV2/BottomNavbar";
+import BottomNavbarV4 from "./BottomNavbarV4/BottomNavbar";
 import BottomNavbar from "./BottomNavbar/BottomNavbar";
+import image from "./img/carmax.jpg";
 import './App.css'
 import { useState } from "react";
 
 function App() {
   const [version, setVersion] = useState("V2")
+  const [isNavbarExpanded, setIsNavbarExpanded] = useState(false);
 
+  // Función de devolución de llamada para manejar el cambio de active
+  const handleActiveChange = (activeValue: any) => {
+    setIsNavbarExpanded(activeValue);
+    console.log("activeValue", isNavbarExpanded);
+  };
   return (
     <div className="web ">
       <div className="versions">
@@ -19,8 +27,15 @@ function App() {
       {version === "V2" && <BottomNavbarV2 />}
       {version === "V3" && <BottomNavbarV2 />}
       {version === "V4" && <BottomNavbarV2 />}
+      
+      <div>
+      <div className={`app-container ${isNavbarExpanded ? "blurred" : ""}`}>
+        <img src={image} alt="dfasd" width={400} height={700} />
+      </div>
+      <BottomNavbar onActiveChange={handleActiveChange} />
+      </div>
     </div>
   )
 }
 
-export default App
+export default App;
