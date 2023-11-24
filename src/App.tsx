@@ -9,12 +9,12 @@ function App() {
 
   return (
     <div className="web ">
-      <div className={drawerOpen ? 'blur-background' : ''}>
+      {/* <div className={drawerOpen ? 'blur-background' : ''}>
         <img src={image} alt="dfasd" width={400} height={750} />
-      </div>
+      </div> */}
       {/* <BottomNavbar /> */}
       <BottomNavbarV2 />
-      <BottomNavbarV3 setDrawerOpen={setDrawerOpen} drawerOpen={drawerOpen}/>
+      {/* <BottomNavbarV3 setDrawerOpen={setDrawerOpen} drawerOpen={drawerOpen}/> */}
     </div>
   )
 }

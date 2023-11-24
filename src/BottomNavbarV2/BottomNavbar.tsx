@@ -60,7 +60,7 @@ const BottomNavbar = () => {
 
 
     return (
-        <div className={`container ${drawerOpen ? 'fullPage' : ''}`}>
+        <div className={`containerV2 ${drawerOpen ? 'fullPage' : ''}`}>
 
             <div className={`${drawerOpen ? 'blur-background' : ''}`}></div>
             <div className={`content ${drawerOpen ? 'open' : ''}`}>

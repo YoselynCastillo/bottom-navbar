@@ -1,7 +1,7 @@
 @import "../styles/variables";
 @import "../styles/mixins";
 
-.container {
+.containerV2 {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -10,8 +10,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-}
-
+    
 
 .fullPage {
     width: 100%;
@@ -232,4 +231,5 @@
         @include customAnimation(slide-out-#{$col}, 70px*$col, 0, height)
     }
 
+}
 }
