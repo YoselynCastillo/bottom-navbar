@@ -139,9 +139,9 @@ export const data: DataType = {
 }
 
 export const Array = [
-    { text: "sell", icon: SellIcon },
-    { text: "finance", icon: FinanceIcon },
-    { text: "shop", icon: ShopIcon },
-    { text: "chat", icon: ChatIcon },
-    { text: "more", icon: MoreIcon },
+    { text: "Sell/Trade", icon: SellIcon },
+    { text: "Finance", icon: FinanceIcon },
+    { text: "Shop", icon: ShopIcon },
+    { text: "Chat", icon: ChatIcon },
+    { text: "More", icon: MoreIcon },
   ];
