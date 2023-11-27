@@ -36,6 +36,11 @@
     @include customAnimation(expand-out, calc(100% - 16px), calc(100% - 32px), width);
 }
 
+.fit-icon{
+    width: 26px;
+    height: 26px;
+    background-color: transparent;
+}
 
 .open {
     margin: 0 auto 8px;
