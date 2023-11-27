@@ -20,7 +20,7 @@ type DataType = {
 };
 
 export const data: DataType = {
-  sell: {
+  Sell: {
     options: [
       {
         icon: BrowseIcon,
@@ -44,7 +44,7 @@ export const data: DataType = {
       },
     ],
   },
-  finance: {
+  Finance: {
     options: [
       {
         icon: BrowseIcon,
@@ -68,7 +68,7 @@ export const data: DataType = {
       // },
     ],
   },
-  shop: {
+  Shop: {
     options: [
       {
         icon: BrowseIcon,
@@ -92,7 +92,7 @@ export const data: DataType = {
       // },
     ],
   },
-  chat: {
+  Chat: {
     options: [
       {
         icon: BrowseIcon,
@@ -116,7 +116,7 @@ export const data: DataType = {
       // },
     ],
   },
-  more: {
+  More: {
     options: [
       {
         icon: BrowseIcon,
@@ -143,9 +143,9 @@ export const data: DataType = {
 };
 
 export const Array = [
-  { text: "sell", icon: SellIcon },
-  { text: "finance", icon: FinanceIcon },
-  { text: "shop", icon: ShopIcon },
-  { text: "chat", icon: ChatIcon },
-  { text: "more", icon: MoreIcon },
+  { text: "Sell", icon: SellIcon },
+  { text: "Finance", icon: FinanceIcon },
+  { text: "Shop", icon: ShopIcon },
+  { text: "Chat", icon: ChatIcon },
+  { text: "More", icon: MoreIcon },
 ];
