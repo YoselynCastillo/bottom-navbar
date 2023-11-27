@@ -49,7 +49,9 @@
     top: 0;
     left: 0;
     width: 0;
-    transition: transform 0.5s ease, left 0.5s ease, opacity 0.5s ease;
+    transition: transform 0.2s ease;
+    transform-origin: center;
+    transform: translateX(-50%) scaleX(0);
   }
 
   @-webkit-keyframes fade-out {
@@ -70,10 +72,6 @@
     100% {
       opacity: 0;
     }
-  }
-
-  .drawer.collapsed .indicator {
-    animation: fade-out 0.2s ease-out both;
   }
 
   .drawer-option-circle {
