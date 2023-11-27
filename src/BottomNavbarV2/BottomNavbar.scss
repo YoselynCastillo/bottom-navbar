@@ -1,7 +1,10 @@
 @import "../styles/variables";
 @import "../styles/mixins";
-
-.container {
+.fullPage {
+    width: 100%;
+    height: 100%;
+}
+.containerV2 {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -10,13 +13,6 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-}
-
-
-.fullPage {
-    width: 100%;
-    height: 100%;
-}
 
 .blur-background {
     width: 100%;
@@ -33,17 +29,17 @@
     margin: 0 auto 8px;
     right: 0;
     box-sizing: border-box;
-    width: calc(100% - 64px);
+    width: calc(100% - 32px);
     box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
     overflow: hidden;
-    @include customAnimation(expand-out, calc(100% - 16px), calc(100% - 64px), width);
+    @include customAnimation(expand-out, calc(100% - 16px), calc(100% - 32px), width);
 }
 
 
 .open {
     margin: 0 auto 8px;
-    @include customAnimation(expand-in, calc(100% - 64px), calc(100% - 16px), width);
+    @include customAnimation(expand-in, calc(100% - 32px), calc(100% - 16px), width);
 }
 
 .bottom_container {
@@ -56,6 +52,7 @@
     flex-direction: row;
     height: 70px;
     overflow: hidden;
+    border-top: 1px solid transparent;
 }
 
 .nav-item {
@@ -232,4 +229,5 @@
         @include customAnimation(slide-out-#{$col}, 70px*$col, 0, height)
     }
 
+}
 }

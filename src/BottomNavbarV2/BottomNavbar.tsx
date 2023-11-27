@@ -60,7 +60,7 @@ const BottomNavbar = () => {
 
 
     return (
-        <div className={`container ${drawerOpen ? 'fullPage' : ''}`}>
+        <div className={`containerV2 ${drawerOpen ? 'fullPage' : ''}`}>
 
             <div className={`${drawerOpen ? 'blur-background' : ''}`}></div>
             <div className={`content ${drawerOpen ? 'open' : ''}`}>
@@ -79,26 +79,26 @@ const BottomNavbar = () => {
                     }
                 </div>
                 <div ref={bottomContentRef} className={`bottom_container ${drawerOpen ? 'withBorder' : ''}`}>
-                        <div className={`nav-item  ${active === "sell" && 'active'}`} onClick={() => selectOption("sell")}>
-                            <SellIcon />
-                            <span>Sell/Trade</span>
-                        </div>
-                        <div className={`nav-item  ${active === "finance" ? 'active' : ''}`} onClick={() => selectOption("finance")}>
-                            <FinanceIcon />
-                            <span>Finance</span>
-                        </div>
-                        <div className={`nav-item  ${active === "shop" ? 'active' : ''}`} onClick={() => selectOption("shop")}>
-                            <ShopIcon />
-                            <span>Shop</span>
-                        </div>
-                        <div className={`nav-item  ${active === "chat" ? 'active' : ''}`} onClick={() => selectOption("chat")}>
-                            <ChatIcon />
-                            <span>Chat</span>
-                        </div>
-                        <div className={`nav-item  ${active === "more" ? 'active' : ''}`} onClick={() => selectOption("more")}>
-                            <MoreIcon />
-                            <span>More</span>
-                        </div>
+                    <div className={`nav-item  ${active === "sell" ? 'active' : ''}`} onClick={() => selectOption("sell")}>
+                        <SellIcon />
+                        <span>Sell/Trade</span>
+                    </div>
+                    <div className={`nav-item  ${active === "finance" ? 'active' : ''}`} onClick={() => selectOption("finance")}>
+                        <FinanceIcon />
+                        <span>Finance</span>
+                    </div>
+                    <div className={`nav-item  ${active === "shop" ? 'active' : ''}`} onClick={() => selectOption("shop")}>
+                        <ShopIcon />
+                        <span>Shop</span>
+                    </div>
+                    <div className={`nav-item  ${active === "chat" ? 'active' : ''}`} onClick={() => selectOption("chat")}>
+                        <ChatIcon />
+                        <span>Chat</span>
+                    </div>
+                    <div className={`nav-item  ${active === "more" ? 'active' : ''}`} onClick={() => selectOption("more")}>
+                        <MoreIcon />
+                        <span>More</span>
+                    </div>
                 </div>
             </div>
         </div>
