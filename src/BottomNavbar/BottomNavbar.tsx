@@ -75,23 +75,23 @@ const BottomNavbar = () => {
                 }
             </div>
             <div ref={bottomContentRef} className="bottom_content">
-                <div className={`nav-item  ${active === "sell" && 'active'}`} onClick={() => selectOption("sell")}>
+                <div className={`nav-item  ${active === "Sell" && 'active'}`} onClick={() => selectOption("Sell")}>
                     <SellIcon />
                     <span>Shop</span>
                 </div>
-                <div className={`nav-item  ${active === "finance" ? 'active' : ''}`} onClick={() => selectOption("finance")}>
+                <div className={`nav-item  ${active === "Finance" ? 'active' : ''}`} onClick={() => selectOption("Finance")}>
                     <FinanceIcon />
                     <span>Finance</span>
                 </div>
-                <div className={`nav-item  ${active === "shop" ? 'active' : ''}`} onClick={() => selectOption("shop")}>
+                <div className={`nav-item  ${active === "Shop" ? 'active' : ''}`} onClick={() => selectOption("Shop")}>
                     <ShopIcon />
                     <span>Shop</span>
                 </div>
-                <div className={`nav-item  ${active === "chat" ? 'active' : ''}`} onClick={() => selectOption("chat")}>
+                <div className={`nav-item  ${active === "Chat" ? 'active' : ''}`} onClick={() => selectOption("Chat")}>
                     <ChatIcon />
                     <span>Chat</span>
                 </div>
-                <div className={`nav-item  ${active === "more" ? 'active' : ''}`} onClick={() => selectOption("more")}>
+                <div className={`nav-item  ${active === "More" ? 'active' : ''}`} onClick={() => selectOption("More")}>
                     <MoreIcon />
                     <span>More</span>
                 </div>
