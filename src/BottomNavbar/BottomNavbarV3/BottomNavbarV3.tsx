@@ -89,6 +89,7 @@ const BottomNavbarV3 = ({ drawerOpen, setDrawerOpen }) => {
 
   return (
     <div className="containerV3">
+       {drawerOpen && <div className="blur-background"></div>}
       <div
         ref={drawerRef}
         className={`drawer ${drawerOpen ? "expanded" : "collapsed"}`}
