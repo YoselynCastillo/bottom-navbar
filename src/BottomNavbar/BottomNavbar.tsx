@@ -78,7 +78,7 @@ const BottomNavbar = () => {
             <div ref={bottomContentRef} className="bottom_content">
                 <div className={`nav-item  ${active === "Sell" && 'active'}`} onClick={() => selectOption("Sell")}>
                     <SellIcon />
-                    <span>Shop</span>
+                    <span>Sell/Trade</span>
                 </div>
                 <div className={`nav-item  ${active === "Finance" ? 'active' : ''}`} onClick={() => selectOption("Finance")}>
                     <FinanceIcon />

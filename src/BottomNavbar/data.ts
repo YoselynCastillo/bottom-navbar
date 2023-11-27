@@ -20,7 +20,7 @@ type DataType = {
 };
 
 export const data: DataType = {
-  Sell: {
+  "Sell/Trade": {
     options: [
       {
         icon: BrowseIcon,
@@ -142,8 +142,9 @@ export const data: DataType = {
   },
 };
 
+
 export const Array = [
-  { text: "Sell", icon: SellIcon },
+  { text: "Sell/Trade", icon: SellIcon },
   { text: "Finance", icon: FinanceIcon },
   { text: "Shop", icon: ShopIcon },
   { text: "Chat", icon: ChatIcon },
