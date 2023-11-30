@@ -88,7 +88,9 @@ const BottomNavbar = () => {
                         <span>Finance</span>
                     </div>
                     <div className={`nav-item  ${active === "shop" ? 'active' : ''}`} onClick={() => selectOption("shop")}>
-                        <ShopIcon />
+                        <div className="fit-icon">
+                            <ShopIcon />
+                        </div>
                         <span>Shop</span>
                     </div>
                     <div className={`nav-item  ${active === "chat" ? 'active' : ''}`} onClick={() => selectOption("chat")}>
