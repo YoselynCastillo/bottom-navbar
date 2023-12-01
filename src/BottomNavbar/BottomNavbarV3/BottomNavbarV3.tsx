@@ -89,7 +89,7 @@ const BottomNavbarV3 = ({ drawerOpen, setDrawerOpen }) => {
 
   return (
     <div className="containerV3">
-       {drawerOpen && <div className="blur-background"></div>}
+      {drawerOpen && <div className="blur-background"></div>}
       <div
         ref={drawerRef}
         className={`drawer ${drawerOpen ? "expanded" : "collapsed"}`}
@@ -107,20 +107,21 @@ const BottomNavbarV3 = ({ drawerOpen, setDrawerOpen }) => {
           </div>
         ))}
       </div>
-      <div className="navbar"  ref={bottomContentRef}>
-        {Array.map((item, index) => {
-          return (
-            <div
-              key={index}
-              onClick={(e) => handleItemClick(index, e, item?.text)}
-              className={`nav-item  ${active === item.text ? "active" : ""}`}
-            >
-              <item.icon />
-              {item.text}
-            </div>
-          );
-        })}
-
+      <div className="navbar" ref={bottomContentRef}>
+        <div  className="nav-container">
+          {Array.map((item, index) => {
+            return (
+              <div
+                key={index}
+                onClick={(e) => handleItemClick(index, e, item?.text)}
+                className={`nav-item  ${active === item.text ? "active" : ""}`}
+              >
+                <item.icon />
+                {item.text}
+              </div>
+            );
+          })}
+        </div>
         <div className="indicator" style={indicatorStyle}></div>
       </div>
     </div>
