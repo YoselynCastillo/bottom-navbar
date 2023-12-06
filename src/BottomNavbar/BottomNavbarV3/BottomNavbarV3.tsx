@@ -97,10 +97,19 @@ const BottomNavbarV3 = ({ drawerOpen, setDrawerOpen }) => {
       >
         {active === "Chat" ? (
           <div className="carousel-container">
-          {[1, 2, 3, 4, 5, 6, 7, 8].map((index) => (
-            <Notification />
-          ))}
-        </div>
+            {[1, 2, 3, 4, 5, 6, 7, 8].map(() => (
+              <Notification />
+            ))}
+          </div>
+        ) : active === "More" ? (
+          <div className="skeleton-card">
+            <div className="skeleton-banner">
+              <div className="skeleton-box-container"></div>
+            </div>
+            <div className="skeleton-details">
+              <div className="skeleton-detail"></div>
+            </div>
+          </div>
         ) : (
           currenData.map((option) => (
             <div
@@ -119,7 +128,7 @@ const BottomNavbarV3 = ({ drawerOpen, setDrawerOpen }) => {
         )}
       </div>
       <div className="navbar" ref={bottomContentRef}>
-        <div  className="nav-container">
+        <div className="nav-container">
           {Array.map((item, index) => {
             return (
               <div
