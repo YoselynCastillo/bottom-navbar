@@ -97,8 +97,8 @@ const BottomNavbarV3 = ({ drawerOpen, setDrawerOpen }) => {
       >
         {active === "Chat" ? (
           <div className="carousel-container">
-            {[1, 2, 3, 4, 5, 6, 7, 8].map(() => (
-              <Notification />
+            {[1, 2, 3, 4, 5, 6, 7, 8].map((index) => (
+              <Notification key={index}/>
             ))}
           </div>
         ) : active === "More" ? (
