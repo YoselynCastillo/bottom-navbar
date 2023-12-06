@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./BottomNavbarV3.scss";
 import { data, Array } from "../data";
+import Notification from "./notification/Notification";
 
 const BottomNavbarV3 = ({ drawerOpen, setDrawerOpen }) => {
   const [selectedItem, setSelectedItem] = useState(null);
@@ -94,18 +95,28 @@ const BottomNavbarV3 = ({ drawerOpen, setDrawerOpen }) => {
         ref={drawerRef}
         className={`drawer ${drawerOpen ? "expanded" : "collapsed"}`}
       >
-        {currenData.map((option) => (
-          <div
-            key={option.text}
-            className="drawer-option"
-            onClick={() => handleDrawerOptionClick()}
-          >
-            <div className="drawer-option-circle">
-              <option.icon />
+        {active === "Chat" ? (
+          <div className="carousel-container">
+          {[1, 2, 3, 4, 5, 6, 7, 8].map((index) => (
+            <Notification />
+          ))}
+        </div>
+        ) : (
+          currenData.map((option) => (
+            <div
+              key={option.text}
+              className="drawer-option"
+              onClick={() => handleDrawerOptionClick()}
+            >
+              <div className="drawer-option-circle">
+                {option.icon && <option.icon />}
+              </div>
+              <span className="drawer-option-text">
+                {boldText(option.text)}
+              </span>
             </div>
-            <span className="drawer-option-text">{boldText(option.text)}</span>
-          </div>
-        ))}
+          ))
+        )}
       </div>
       <div className="navbar" ref={bottomContentRef}>
         <div  className="nav-container">
