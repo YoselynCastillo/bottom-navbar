@@ -94,26 +94,26 @@ export const data: DataType = {
   },
   Chat: {
     options: [
-      {
-        icon: BrowseIcon,
-        text: "Browse by category",
-        url: "https://lit.dev/",
-      },
-      {
-        icon: ViewAllIcon,
-        text: "View all inventory",
-        url: "https://lit.dev/",
-      },
-      {
-        icon: SellIcon,
-        text: "Shop cars near me",
-        url: "https://lit.dev/",
-      },
       // {
-      //     icon: "browser",
-      //     text: "Find a store",
-      //     url: "https://lit.dev/"
+      //   icon: BrowseIcon,
+      //   text: "Browse by category",
+      //   url: "https://lit.dev/",
       // },
+      // {
+      //   icon: ViewAllIcon,
+      //   text: "View all inventory",
+      //   url: "https://lit.dev/",
+      // },
+      // {
+      //   icon: SellIcon,
+      //   text: "Shop cars near me",
+      //   url: "https://lit.dev/",
+      // },
+      // // {
+      // //     icon: "browser",
+      // //     text: "Find a store",
+      // //     url: "https://lit.dev/"
+      // // },
     ],
   },
   More: {
