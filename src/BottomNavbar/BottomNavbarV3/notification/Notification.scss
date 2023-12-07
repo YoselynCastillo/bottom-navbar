@@ -1,18 +1,16 @@
-
 .card-container {
-    background-color: #e7dfdf; 
-    border-radius: 10%;
-    padding: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
+  background-color: #dfdfdf;
+  border-radius: 10%;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
 }
 
 .indicator-container {
-    background-color: #e7dfdf; 
-    width: 150px;
-    height: 150px;
-  }
-  
+  background-color: #ededede1;
+  width: 150px;
+  height: 150px;
+}
